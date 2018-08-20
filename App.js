@@ -1,6 +1,7 @@
 import React, { Component } from "react";
-import { Alert, Image, StyleSheet, ScrollView } from "react-native";
+import { Image, StyleSheet, ScrollView } from "react-native";
 
+import Alert from "./Alert";
 import Button from "./Button";
 import NativeModal from "./NativeModal";
 
@@ -8,17 +9,6 @@ const uri =
   "https://cdn-images-1.medium.com/max/800/1*KANHihva9OdXx2-V5EDn3g.png";
 
 export default class App extends Component {
-  handleAlert = () => {
-    Alert.alert("A simple alert", "With a simple message", [
-      {
-        text: "Cancel",
-        onPress: () => alert("Cancel Pressed"),
-        style: "cancel"
-      },
-      { text: "OK", onPress: () => alert("OK Pressed") }
-    ]);
-  };
-
   handleSwipe = () => alert("Swipe");
   handleScroll = () => alert("Scroll");
   handleBoth = () => alert("Scrollable and Swipeable");
@@ -27,7 +17,7 @@ export default class App extends Component {
     return (
       <ScrollView contentContainerStyle={styles.container}>
         <Image source={{ uri }} style={styles.logo} />
-        <Button color="#FC2D1E" label="Alert" onPress={this.handleAlert} />
+        <Alert />
         <NativeModal />
         <Button
           color="#F7D426"
