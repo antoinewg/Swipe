@@ -160,6 +160,12 @@ class Printer {
     this._buf.removeTrailingNewline();
   }
 
+  exactSource(loc, cb) {
+    this._catchUp("start", loc);
+
+    this._buf.exactSource(loc, cb);
+  }
+
   source(prop, loc) {
     this._catchUp(prop, loc);
 

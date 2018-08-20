@@ -523,6 +523,7 @@ export interface TaggedTemplateExpression extends BaseNode {
   type: "TaggedTemplateExpression";
   tag: Expression;
   quasi: TemplateLiteral;
+  typeParameters: TypeParameterInstantiation | TSTypeParameterInstantiation | null;
 }
 
 export interface TemplateElement extends BaseNode {
@@ -1492,7 +1493,7 @@ export function metaProperty(meta: Identifier, property: Identifier): MetaProper
 export function classMethod(kind: "get" | "set" | "method" | "constructor" | undefined, key: Identifier | StringLiteral | NumericLiteral | Expression, params: Array<LVal>, body: BlockStatement, computed?: boolean, _static?: boolean | null, abstract?: boolean | null, access?: "public" | "private" | "protected" | null, accessibility?: "public" | "private" | "protected" | null, async?: boolean, decorators?: Array<Decorator> | null, generator?: boolean, optional?: boolean | null, returnType?: TypeAnnotation | TSTypeAnnotation | Noop | null, typeParameters?: TypeParameterDeclaration | TSTypeParameterDeclaration | Noop | null): ClassMethod;
 export function objectPattern(properties: Array<RestElement | ObjectProperty>, decorators?: Array<Decorator> | null, typeAnnotation?: TypeAnnotation | TSTypeAnnotation | Noop | null): ObjectPattern;
 export function spreadElement(argument: Expression): SpreadElement;
-export function taggedTemplateExpression(tag: Expression, quasi: TemplateLiteral): TaggedTemplateExpression;
+export function taggedTemplateExpression(tag: Expression, quasi: TemplateLiteral, typeParameters?: TypeParameterInstantiation | TSTypeParameterInstantiation | null): TaggedTemplateExpression;
 export function templateElement(value: any, tail?: boolean): TemplateElement;
 export function templateLiteral(quasis: Array<TemplateElement>, expressions: Array<Expression>): TemplateLiteral;
 export function yieldExpression(argument?: Expression | null, delegate?: boolean): YieldExpression;

@@ -141,6 +141,7 @@ function ClassPrivateProperty(node) {
   }
 
   this.print(node.key, node);
+  this.print(node.typeAnnotation, node);
 
   if (node.value) {
     this.space();
