@@ -4,6 +4,7 @@ import { Image, StyleSheet, ScrollView } from "react-native";
 import Alert from "./Alert";
 import Button from "./Button";
 import NativeModal from "./NativeModal";
+import SwipeableModal from "./SwipeableModal";
 
 const uri =
   "https://cdn-images-1.medium.com/max/800/1*KANHihva9OdXx2-V5EDn3g.png";
@@ -19,11 +20,7 @@ export default class App extends Component {
         <Image source={{ uri }} style={styles.logo} />
         <Alert />
         <NativeModal />
-        <Button
-          color="#F7D426"
-          label="Swipeable Modal"
-          onPress={this.handleSwipe}
-        />
+        <SwipeableModal />
         <Button
           color="#00D774"
           label="Scrollable Modal"
