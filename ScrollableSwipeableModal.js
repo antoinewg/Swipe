@@ -1,5 +1,5 @@
 import React, { Fragment, Component } from "react";
-import { ScrollView, StyleSheet, Text } from "react-native";
+import { View, ScrollView, StyleSheet, Text } from "react-native";
 import Button from "./Button";
 
 import Modal from "react-native-modalbox";
@@ -25,6 +25,8 @@ class ScrollableSwipeableModal extends Component {
           backdropOpacity={0.1}
         >
           <ScrollView>
+            <View style={styles.scrollIndicator} />
+            <View style={styles.thresholdIndicator} />
             <Text style={styles.description}>
               {[
                 "This is a swipeable modal from the 'react-native-modalbox' library.\n\n",
@@ -70,5 +72,18 @@ const styles = StyleSheet.create({
   description: {
     padding: 20,
     fontSize: 18
+  },
+  scrollIndicator: {
+    height: 20,
+    width: 1,
+    backgroundColor: "red",
+    position: "absolute"
+  },
+  thresholdIndicator: {
+    height: 50,
+    width: 1,
+    backgroundColor: "green",
+    position: "absolute",
+    right: 0
   }
 });
