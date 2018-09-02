@@ -20,12 +20,15 @@ class SwipeableModal extends Component {
           backdropOpacity={0.2}
           swipeDirection="left"
           onSwipe={this.closeModal}
+          onBackdropPress={this.closeModal}
         >
           <View style={styles.modalContainer}>
             <Text style={styles.description}>
-              {
-                "This is a swipeable modal from the 'react-native-modal' library.\n\nYou can swipe it left to close it."
-              }
+              {[
+                "This is a swipeable modal from the 'react-native-modal' library.\n\n",
+                "You can swipe it left to close it.\n\n",
+                "You can also click on the backdrop to close the modal."
+              ]}
             </Text>
             <Button
               color="#F7D426"

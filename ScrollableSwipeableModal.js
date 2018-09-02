@@ -22,16 +22,16 @@ class ScrollableSwipeableModal extends Component {
               height: 600
             }
           ]}
-          position={"center"}
           swipeArea={20}
           isOpen={this.state.isOpen}
         >
           <ScrollView>
-            <View style={{ width: 300, paddingLeft: 10 }}>
+            <View style={{ width: 300 }}>
               <Text style={styles.description}>
-                {
-                  "This is a swipeable modal from the 'react-native-modal' library.\n\nYou can swipe it left to close it."
-                }
+                {[
+                  "This is a swipeable modal from the 'react-native-modalbox' library.\n\n",
+                  "You can swipe it left to close it."
+                ]}
               </Text>
               <Button
                 color="#8B1E98"
