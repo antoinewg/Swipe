@@ -18,15 +18,24 @@ class ScrollableModal extends Component {
         <Modal
           isVisible={this.state.visible}
           backdropOpacity={0.2}
-          swipeDirection="left"
           onSwipe={this.closeModal}
+          // swipeDirection={"left"} <-- We can't specify swipeDirection since we want to scroll inside the modal
+          onBackdropPress={this.closeModal}
         >
           <View style={styles.modalContainer}>
             <ScrollView>
               <Text style={styles.description}>
-                {
-                  "This is a scrollable modal from the 'react-native-modal' library.\n\nYou can swipe it left to close it."
-                }
+                {[
+                  "This is a scrollable modal from the 'react-native-modal' library.\n\n",
+                  "You can't swipe this modal away, because it clashes with the scroll of the scrollView.\n\n",
+                  "So if you want to scroll inside the modal, you can't specify swipeDirection.\n\n",
+                  "However, you can scroll inside the modal to check the content.\n\n",
+                  "There are basically 2 ways to close this modal:\n",
+                  " - Click on the backdrop.\n",
+                  " - Click on the button at the bottom of the scrollView.\n\n",
+                  "To provide a better UX, you can put a X at the top right corner of this modal, ",
+                  "so that the user doesn't have to scroll all the way."
+                ]}
               </Text>
               <Button
                 color="#00D774"
