@@ -16,21 +16,23 @@ class ScrollableSwipeableModal extends Component {
     return (
       <View style={styles.container}>
         <Modal
-          style={[
-            styles.container,
-            {
-              height: 600
-            }
-          ]}
+          style={styles.modalContainer}
+          swipeToClose={true}
           swipeArea={20}
+          swipeThreshold={50}
           isOpen={this.state.isOpen}
+          onClosed={this.closeModal}
+          backdropColor={"transparent"}
+          backdropPressToClose={false}
+          backdrop={false}
+          entry={"top"}
+          position={"center"}
         >
-          <ScrollView>
-            <View style={{ width: 300 }}>
+          <View>
+            <View>
               <Text style={styles.description}>
                 {[
-                  "This is a swipeable modal from the 'react-native-modalbox' library.\n\n",
-                  "You can swipe it left to close it."
+                  "This is a swipeable modal from the 'react-native-modalbox' library.\n\n"
                 ]}
               </Text>
               <Button
@@ -39,7 +41,7 @@ class ScrollableSwipeableModal extends Component {
                 onPress={this.closeModal}
               />
             </View>
-          </ScrollView>
+          </View>
         </Modal>
         <Button
           color="#8B1E98"
@@ -60,15 +62,14 @@ const styles = StyleSheet.create({
     justifyContent: "center"
   },
   modalContainer: {
-    flex: 1,
+    width: 300,
+    height: 300,
     alignItems: "center",
     justifyContent: "center",
     backgroundColor: "#DCDCDC",
     borderRadius: 4,
     borderColor: "#C0C0C0",
-    borderWidth: 2,
-    marginHorizontal: 60,
-    marginVertical: 200
+    borderWidth: 2
   },
   description: {
     padding: 20,
