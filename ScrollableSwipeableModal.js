@@ -22,9 +22,7 @@ class ScrollableSwipeableModal extends Component {
           swipeThreshold={50}
           isOpen={this.state.isOpen}
           onClosed={this.closeModal}
-          backdropColor={"transparent"}
-          backdropPressToClose={false}
-          backdrop={false}
+          backdropOpacity={0.1}
         >
           <ScrollView>
             <Text style={styles.description}>
@@ -34,7 +32,8 @@ class ScrollableSwipeableModal extends Component {
                 "You can also scroll inside the modal.\n\n",
                 "Furthermore, you can swipe the modal down.\n\n",
                 "To do that, you need to place your finger on the top 'swipeArea' (20 here) pixels, ",
-                "and drag at least 'swipeThreshold' (50 here)."
+                "and drag at least 'swipeThreshold' (50 here).\n\n",
+                "You can still press the backdrop to close the modal."
               ]}
             </Text>
             <Button

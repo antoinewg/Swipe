@@ -17,7 +17,7 @@ class SwipeableModal extends Component {
       <Fragment>
         <Modal
           isVisible={this.state.visible}
-          backdropOpacity={0.2}
+          backdropOpacity={0.1}
           swipeDirection="left"
           onSwipe={this.closeModal}
           onBackdropPress={this.closeModal}

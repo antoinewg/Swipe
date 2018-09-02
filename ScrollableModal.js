@@ -17,7 +17,7 @@ class ScrollableModal extends Component {
       <Fragment>
         <Modal
           isVisible={this.state.visible}
-          backdropOpacity={0.2}
+          backdropOpacity={0.1}
           onSwipe={this.closeModal}
           // swipeDirection={"left"} <-- We can't specify swipeDirection since we want to scroll inside the modal
           onBackdropPress={this.closeModal}
