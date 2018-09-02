@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Fragment, Component } from "react";
 import { Modal, View, StyleSheet, Text } from "react-native";
 import Button from "./Button";
 
@@ -12,14 +12,12 @@ class NativeModal extends Component {
 
   render() {
     return (
-      <View style={styles.container}>
+      <Fragment>
         <Modal
           animationType="slide"
           transparent={true}
           visible={this.state.modalVisible}
-          onRequestClose={() =>
-            alert("Modal has been closed with the back button.")
-          }
+          onRequestClose={() => this.closeModal}
         >
           <View style={styles.modalContainer}>
             <Text style={styles.description}>
@@ -36,7 +34,7 @@ class NativeModal extends Component {
         </Modal>
 
         <Button color="#F67700" label="Native Modal" onPress={this.openModal} />
-      </View>
+      </Fragment>
     );
   }
 }
@@ -44,11 +42,6 @@ class NativeModal extends Component {
 export default NativeModal;
 
 const styles = StyleSheet.create({
-  container: {
-    width: "100%",
-    alignItems: "center",
-    justifyContent: "center"
-  },
   modalContainer: {
     flex: 1,
     alignItems: "center",

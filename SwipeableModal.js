@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Fragment, Component } from "react";
 import { View, StyleSheet, Text } from "react-native";
 import Button from "./Button";
 
@@ -14,7 +14,7 @@ class SwipeableModal extends Component {
 
   render() {
     return (
-      <View style={styles.container}>
+      <Fragment>
         <Modal
           isVisible={this.state.visible}
           backdropOpacity={0.2}
@@ -37,12 +37,13 @@ class SwipeableModal extends Component {
             />
           </View>
         </Modal>
+
         <Button
           color="#F7D426"
           label="Swipeable Modal"
           onPress={this.openModal}
         />
-      </View>
+      </Fragment>
     );
   }
 }
@@ -63,7 +64,7 @@ const styles = StyleSheet.create({
     borderRadius: 4,
     borderColor: "#C0C0C0",
     borderWidth: 2,
-    marginHorizontal: 60,
+    marginHorizontal: 40,
     marginVertical: 200
   },
   description: {

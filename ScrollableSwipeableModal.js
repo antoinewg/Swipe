@@ -1,5 +1,5 @@
-import React, { Component } from "react";
-import { ScrollView, View, StyleSheet, Text } from "react-native";
+import React, { Fragment, Component } from "react";
+import { ScrollView, StyleSheet, Text } from "react-native";
 import Button from "./Button";
 
 import Modal from "react-native-modalbox";
@@ -14,9 +14,9 @@ class ScrollableSwipeableModal extends Component {
 
   render() {
     return (
-      <View style={styles.container}>
+      <Fragment>
         <Modal
-          style={styles.modalContainer}
+          style={styles.container}
           swipeToClose={true}
           swipeArea={20}
           swipeThreshold={50}
@@ -25,30 +25,32 @@ class ScrollableSwipeableModal extends Component {
           backdropColor={"transparent"}
           backdropPressToClose={false}
           backdrop={false}
-          entry={"top"}
-          position={"center"}
         >
-          <View>
-            <View>
-              <Text style={styles.description}>
-                {[
-                  "This is a swipeable modal from the 'react-native-modalbox' library.\n\n"
-                ]}
-              </Text>
-              <Button
-                color="#8B1E98"
-                label="Close Modal"
-                onPress={this.closeModal}
-              />
-            </View>
-          </View>
+          <ScrollView>
+            <Text style={styles.description}>
+              {[
+                "This is a swipeable modal from the 'react-native-modalbox' library.\n\n",
+                "As before, you can click on the button below to close the modal.\n\n",
+                "You can also scroll inside the modal.\n\n",
+                "Furthermore, you can swipe the modal down.\n\n",
+                "To do that, you need to place your finger on the top 'swipeArea' (20 here) pixels, ",
+                "and drag at least 'swipeThreshold' (50 here)."
+              ]}
+            </Text>
+            <Button
+              color="#8B1E98"
+              label="Close Modal"
+              onPress={this.closeModal}
+            />
+          </ScrollView>
         </Modal>
+
         <Button
           color="#8B1E98"
           label="Scrollable + Swipeable"
           onPress={this.openModal}
         />
-      </View>
+      </Fragment>
     );
   }
 }
@@ -57,12 +59,7 @@ export default ScrollableSwipeableModal;
 
 const styles = StyleSheet.create({
   container: {
-    width: "100%",
-    alignItems: "center",
-    justifyContent: "center"
-  },
-  modalContainer: {
-    width: 300,
+    width: 260,
     height: 300,
     alignItems: "center",
     justifyContent: "center",
