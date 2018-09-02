@@ -7,10 +7,10 @@ class Alert extends Component {
     RNAlert.alert("A simple alert", "With a simple message", [
       {
         text: "Cancel",
-        onPress: () => alert("Cancel Pressed"),
+        onPress: () => {},
         style: "cancel"
       },
-      { text: "OK", onPress: () => alert("OK Pressed") }
+      { text: "OK", onPress: () => {} }
     ]);
   };
 
