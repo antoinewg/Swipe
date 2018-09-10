@@ -1,12 +1,13 @@
 import React, { Component } from "react";
 import { Image, StyleSheet, View } from "react-native";
 
-import Alert from "./Alert";
-import Button from "./Button";
-import NativeModal from "./NativeModal";
-import SwipeableModal from "./SwipeableModal";
-import ScrollableModal from "./ScrollableModal";
-import ScrollableSwipeableModal from "./ScrollableSwipeableModal";
+import {
+  Alert,
+  NativeModal,
+  SwipeableModal,
+  ScrollableModal,
+  ScrollableSwipeableModal
+} from "./components";
 
 const uri =
   "https://cdn-images-1.medium.com/max/800/1*KANHihva9OdXx2-V5EDn3g.png";
