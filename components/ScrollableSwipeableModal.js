@@ -60,8 +60,8 @@ export default ScrollableSwipeableModal;
 
 const styles = StyleSheet.create({
   container: {
-    width: 260,
-    height: 300,
+    width: "80%",
+    height: "60%",
     alignItems: "center",
     justifyContent: "center",
     backgroundColor: "#DCDCDC",

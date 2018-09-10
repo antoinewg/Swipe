@@ -17,13 +17,15 @@ class NativeModal extends Component {
           animationType="slide"
           transparent={true}
           visible={this.state.modalVisible}
-          onRequestClose={() => this.closeModal}
+          onRequestClose={this.closeModal}
         >
           <View style={styles.modalContainer}>
             <Text style={styles.description}>
-              {
-                "A native modal is easy enough to implement but the risk is that the user can feel trapped if they can't close the Modal. \n\nThe only way they can is by clicking on:"
-              }
+              {[
+                "A native modal is easy enough to implement but the risk is that ",
+                "the user can feel trapped if they can't close the Modal. \n\n",
+                "The only way they can is by clicking on:"
+              ]}
             </Text>
             <Button
               color="#F67700"
@@ -51,7 +53,7 @@ const styles = StyleSheet.create({
     borderColor: "#C0C0C0",
     borderWidth: 2,
     marginHorizontal: 60,
-    marginVertical: 200
+    marginVertical: 120
   },
   description: {
     padding: 20,

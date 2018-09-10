@@ -59,11 +59,6 @@ class ScrollableModal extends Component {
 export default ScrollableModal;
 
 const styles = StyleSheet.create({
-  container: {
-    width: "100%",
-    alignItems: "center",
-    justifyContent: "center"
-  },
   modalContainer: {
     flex: 1,
     alignItems: "center",
@@ -73,7 +68,7 @@ const styles = StyleSheet.create({
     borderColor: "#C0C0C0",
     borderWidth: 2,
     marginHorizontal: 40,
-    marginVertical: 200
+    marginVertical: 120
   },
   description: {
     paddingHorizontal: 20,
